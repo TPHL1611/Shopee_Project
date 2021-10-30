@@ -97,6 +97,7 @@
     border-width: 20px 28px;
     border-style: solid;
     border-color: transparent transparent var(--text-white) transparent;
+    z-index: 0;
 }
 
 .navbar-user__menu::after {
@@ -115,7 +116,7 @@
 }
 
 .navbar-user-item:hover {
-    background-color: #fafafa;
+    background-color: var(--hover-color);
 }
 
 .navbar-user-item a {
@@ -390,7 +391,7 @@
 }
 
 .search-history__content li:hover {
-    background-color: #fafafa;
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
@@ -713,5 +714,293 @@
 
 .btn-option--apple {
     background-color: var(--back-color-black);
+    color: var(--text-white);
+}
+
+/* App__container */
+
+#app__container {
+    background-color: #f5f5f5;
+}
+
+.category {
+    border-radius: 2px;
+    background-color: var(--back-color-white);
+}
+
+.category__heading {
+    font-size: 1.8rem;
+    color: var(--text-black);
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category__heading-icon {
+    font-size: 1.5rem;
+    padding-right: 4px;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-item {
+}
+
+.category-item--active .category-item__link {
+    color: var(--primary-color);
+    
+}
+
+.category-item--active .category-item__link::before {
+    position: absolute;
+    content: "";
+    border-width: 3px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--primary-color);
+    left: 4px;
+    /* top: 20px; Dùng top tự chỉnh hoặc dùng top = 0  và dùng thêm transform */
+    top: 50%;
+    transform: translateY(calc(50% - 7px));
+    
+
+}
+
+.category-item__link {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-black);
+    display: block;
+    padding: 16px;
+    transition: right linear 0.1s;
+    right: 0;
+}
+
+.category-item__link:hover {
+    right: -5px;
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+.app__content {
+    padding-top: 36px;
+}
+
+.home-filter {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.home-filter__label {
+    color: #555555;
+    font-size: 1.5rem;
+    margin-right: 16px;
+}
+
+.home-filter__btn {
+    margin-right: 12px;
+    border-radius: 2px;
+}
+
+.home-filter__btn:hover {
+    opacity: 0.8;
+}
+
+.home-filter__page {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    font-size: 1.4rem;
+}
+
+.home-filter__page-num {
+    margin-right: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.home-filter__page-curent {
+    color: var(--second-color);
+}
+
+.home-filter__page-control {
+    display: flex;
+    width: 72px;
+    height: 36px;
+    margin: auto;
+}
+
+.home-filter__page-btn {
+    flex: 1;
+    display: flex;
+    text-decoration: none;
+    color: var(--text-black);
+    background-color: var(--back-color-white);
+}
+
+.home-filter__page-btn--disabled {
+    background-color: var(--hover-color);
+    cursor: default;
+}
+
+.home-filter__page-btn--disabled .home-filter__page-icon {
+    color: var(--border-color);
+}
+
+.home-filter__page-btn:first-child {
+    border-right: 1px solid #f9f9f9;
+}
+
+.home-filter__page-icon {
+    margin: auto;
+    color: var(--text-black);
+}
+
+/* Product-item */
+
+.home-product__item {
+    position: relative;
+    background-color: var(--back-color-white);
+    margin-top: 10px;
+}
+
+.home-product-item__img {
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.home-product-item__label {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    color: var(--text-black);
+    padding: 0 10px;
+    margin: 10px 0;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 3.2rem;
+}
+
+.home-product-item__deal {
+    margin: 0 10px;
+    border: 1px solid #f5a623;
+    color: #f5a623;
+    padding: 4px;
+}
+
+.home-product-item__price {
+    margin-left: 10px;
+    padding: 10px 0 4px 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.home-product-item__action {
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-product-item__like {
+    margin-right: 20px;
+    font-size: 1.3rem;
+}
+
+i.home-product-item__like-icon-fill {
+    display: none;
+}
+
+.home-product-item__like--liked .home-product-item__like-icon-fill {
+    color: rgba(245, 61, 47, 1);
+    display: inline-block;
+}
+
+.home-product-item__like--liked .home-product-item__like-icon-empty {
+    display: none;
+}
+
+.home-product-item__rating {
+    color: #f5a623;
+    margin-left: auto;
+}
+
+.home-product-item__status {
+    font-size: 1.2rem;
+}
+
+.home-product-item__adress {
+    margin-left: auto;
+    padding: 6px 10px 10px 10px;
+    float: right;
+    font-size: 1.4rem;
+    color: rgba(89, 89, 89, 1);
+}
+
+.home-product-item__place-wrap {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    color: var(--label-mark-color);
+    background-color: currentColor;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.home-product-item__place-wrap::after {
+    content: "";
+    position: absolute;
+    border-top: 4px solid currentColor;
+    border-left: 4px solid transparent;
+    bottom: -4px;
+    left: 0px;
+    filter: brightness(60%);
+}
+
+.home-product-item__place {
+    color: var(--text-white);
+    padding: 4px;
+    line-height: 1rem;
+}
+
+.home-product-item__sale-off {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 32px;
+    text-align: center;
+    background-color: rgba(255, 216, 57, 1);
+    font-size: 1.2rem;
+    padding-top: 4px;
+    line-height: 1.3rem;
+}
+
+/* Vẽ 2 nửa hình vuông cũng được, ghép lại cũng được, code ở fie base */
+
+.home-product-item__sale-off::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 18px 4px;
+    border-color: transparent rgba(255, 216, 57, 1) transparent rgba(255, 216, 57, 1);
+    bottom: -4px;
+    left: 0px;
+}
+
+.home-product-item__sale-off--percent {
+    color: rgba(238, 77, 45, 1);
+}
+
+.home-product-item__sale-off--name {
     color: var(--text-white);
 }

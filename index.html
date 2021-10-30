@@ -243,25 +243,104 @@
             </div>
         </header>
 
-        <div id="container">
-            <nav class="category">
-                <ul class="category-list">
-                    <h3 class="category__heading">
-                        <i class="fas fa-list-ul"></i>
-                        Danh Mục
-                    </h3>
-                    
-                    <li class="category-item category-item--active">
-                        <a href="#" class="category-item__link">Điện thoại thông minh</a>
-                    </li>
-                    <li class="category-item">
-                        <a href="#" class="category-item__link">Phụ kiện thông minh</a>
-                    </li>
-                    <li class="category-item">
-                        <a href="#" class="category-item__link">Tiện ích Mi Home</a>
-                    </li>
-                </ul>
-            </nav>
+        <div id="app__container">
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__col-2">
+                        <nav class="category">
+                            <ul class="category-list">
+                                <h3 class="category__heading">
+                                    <i class="category__heading-icon fas fa-list-ul"></i>
+                                    Danh Mục
+                                </h3>
+                
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item__link">Điện thoại thông minh</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Phụ kiện thông minh</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Tiện ích Mi Home</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="grid__col-10">
+                        <div class="home-filter">
+                            <span class="home-filter__label">Sắp xếp theo</span>
+                            <button class="btn home-filter__btn btn--primary">Phổ biến</button>
+                            <button class="btn home-filter__btn">Mới nhất</button>
+                            <button class="btn home-filter__btn">Bán chạy</button>
+
+                            <div class="select-input">
+                                <span class="select-input__name">Giá</span>
+                                <i class="select-input__icon fas fa-sort-down"></i>
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Thấp đến Cao</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Thấp đến Cao</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="home-filter__page">
+                                <div class="home-filter__page-num">
+                                    <span class="home-filter__page-curent">1</span>
+                                    /
+                                    <span class="home-filter__page-total">1</span>
+                                </div>
+                                
+                                <div class="home-filter__page-control">
+                                    <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fas fa-caret-left"></i>
+                                    </a>
+                                    <a href="" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fas fa-caret-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-product">
+                            <div class="grid__row">
+                                <div class="grid__col-2-4">
+                                    <div class="home-product__item">
+                                        <div class="home-product-item__img" style="background: url(data:image/jpeg;base64,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);"></div>
+                                        <h3 class="home-product-item__label">Điện thoại Xiaomi POCO X3 PRO - 6GB/128GB</h3>
+                                        <span class="home-product-item__deal">0% TRẢ GÓP</span>
+                                        <p class="home-product-item__price">đ5.590.000 - đ5.690.000</p>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <span class="home-product-item__rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="home-product-item__status">Đã bán 11,2k</span>
+                                        </div>
+                                        <span class="home-product-item__adress">TP. Hồ Chí Minh</span>
+                                        <div class="home-product-item__place-wrap">
+                                            <p class="home-product-item__place">MALL</p>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off--percent">20%</span>
+                                            <span class="home-product-item__sale-off--name">GIẢM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer id="footer">
