@@ -220,3 +220,40 @@ content: "";
     border-left: 18px solid transparent;
     bottom: -5px;
     right: 0px; */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    min-width: 40px;
+    height: 30px;
+    margin: 0 16px;
+}
+
+.pagination-item--selected .pagination-item__link {
+    color: var(--text-white);
+    background-color: var(--primary-color);
+}
+
+.pagination-item--selected .pagination-item__link:hover {
+    opacity: 0.8;
+}
+
+.pagination-item-icon {
+    color: rgb(150, 150, 150);
+}
+
+.pagination-item__link {
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 2rem;
+}
