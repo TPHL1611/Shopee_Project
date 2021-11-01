@@ -586,6 +586,27 @@
 
 .auth-form {
     width: 400px;
+    display: none;
+}
+
+.auth-form.open {
+    display: block;
+}
+
+.auth-form .js-auth-form-logIn {
+    visibility: hidden;
+}
+
+.auth-form.js-auth-form-logIn.open {
+    display: block;
+}
+
+.auth-form .js-auth-form-register {
+    /* display: none; */
+}
+
+.auth-form.js-auth-form-register.open {
+    display: block;
 }
 
 .auth-form__header {
@@ -593,10 +614,6 @@
     justify-content: space-between;
     font-size: 2rem;
     margin: 20px 10px 20px 0;
-}
-
-.auth-form__header--register {
-
 }
 
 .auth-form__header--logIn {

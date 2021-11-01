@@ -82,9 +82,6 @@ html {
     }
 }
 
-.open {
-    display: flex;
-}
 
 .modal {
     position: fixed;
@@ -93,6 +90,10 @@ html {
     left: 0;
     bottom: 0;
     display: none;
+}
+
+.modal.open {
+    display: flex;
 }
 
 .modal-overlay {
@@ -111,6 +112,7 @@ html {
     background-color: var(--back-color-white);
     padding: 16px;
     animation: zoomOut linear 0.1s;
+    /* display: none; */
 }
 
 .btn {
