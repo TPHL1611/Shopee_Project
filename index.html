@@ -561,7 +561,7 @@
                         </div>
                         
                         <div class="auth-form__footer--help">
-                            <p>Bạn đã biết đến Shopee? <a href="">Đăng nhập</a></p>
+                            <p>Bạn đã biết đến Shopee? <a href="#" class="js-logIn">Đăng nhập</a></p>
                         </div>
                     </div>
                 </div>
@@ -622,7 +622,7 @@
 
                     <div class="auth-form__footer">
                         <div class="auth-form__footer--help">
-                            <p>Bạn mới biết đến Shopee? <a href="">Đăng ký</a></p>
+                            <p>Bạn mới biết đến Shopee? <a href="#" class="js-register">Đăng ký</a></p>
                         </div>
                     </div>
                 </div>
@@ -632,46 +632,42 @@
 </body>
 
 <script>
-    const btnRegister = document.querySelector('.js-register')
-    const btnLogIn = document.querySelector('.js-logIn')
+    const btnRegisters = document.querySelectorAll('.js-register')
+    const btnLogIns = document.querySelectorAll('.js-logIn')
     const modal = document.querySelector('.modal')
-    const auth_form_1 = modal.querySelector('.auth-form')
-    const auth_form_2 = modal.querySelector('.auth-form:nth-child(2)')
+    const auth_form_register = modal.querySelector('.auth-form')
+    const auth_form_logIn = modal.querySelector('.auth-form:nth-child(2)')
+    const modal_body = modal.querySelector('.modal-body')
 
+    for (var btnRegister of btnRegisters) {
+        btnRegister.addEventListener('click', function() {
+            showModalRegister();
+        })
+    }
+
+    for (var btnLogIn of btnLogIns) {
+        btnLogIn.addEventListener('click', function() {
+            showModallogIn();
+        })
+    }
 
     function showModalRegister() {
+        auth_form_logIn.classList.remove('open'); //Xóa form đăng nhập đã hiện (nếu có)
         modal.classList.add('open');
-        auth_form_1.classList.add('open');
+        auth_form_register.classList.add('open'); //Hiện form đăng ký
     }
 
     function showModallogIn() {
+        auth_form_register.classList.remove('open'); //Xóa form đăng kí đã hiện (nếu có)
         modal.classList.add('open');
-        auth_form_2.classList.add('open');
+        auth_form_logIn.classList.add('open'); //Hiện form đăng nhập
     }
-
-    
-    btnRegister.addEventListener('click', function() {
-        modal.classList.add('open');
-        auth_form_1.classList.add('open');
-        auth_form_2.classList.remove('open');
-    })
-    
- 
-    btnLogIn.addEventListener('click', function() {
-        modal.classList.add('open');
-        auth_form_2.classList.add('open');
-        auth_form_1.classList.remove('open');
-
-    })
 
     modal.addEventListener('click', function() {
         modal.classList.remove('open')
     })
 
-    auth_form_1.addEventListener('click', function() {
-        event.stopPropagation();
-    })
-    auth_form_2.addEventListener('click', function() {
+    modal_body.addEventListener('click', function() {
         event.stopPropagation();
     })
 

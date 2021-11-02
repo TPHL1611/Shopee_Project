@@ -593,22 +593,6 @@
     display: block;
 }
 
-.auth-form .js-auth-form-logIn {
-    visibility: hidden;
-}
-
-.auth-form.js-auth-form-logIn.open {
-    display: block;
-}
-
-.auth-form .js-auth-form-register {
-    /* display: none; */
-}
-
-.auth-form.js-auth-form-register.open {
-    display: block;
-}
-
 .auth-form__header {
     display: flex;
     justify-content: space-between;
